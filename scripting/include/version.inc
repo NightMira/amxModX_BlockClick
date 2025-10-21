@@ -17,10 +17,10 @@
 #define PROJECT_VERSION_MAJOR_NUM 0
 #define PROJECT_VERSION_MINOR "0"
 #define PROJECT_VERSION_MINOR_NUM 0
-#define PROJECT_VERSION_PATCH "0"
-#define PROJECT_VERSION_PATCH_NUM 0
-#define PROJECT_VERSION "0.0.0"
-#define PROJECT_VERSION_NUM 0
+#define PROJECT_VERSION_PATCH "4"
+#define PROJECT_VERSION_PATCH_NUM 4
+#define PROJECT_VERSION "0.0.4"
+#define PROJECT_VERSION_NUM 4
 
 // Version Suffix (Pre-release tags) - ✅ В репозитории (управляется вручную)
 #define PROJECT_VERSION_TAG ""
@@ -32,15 +32,15 @@
 #define PROJECT_BUILD_TYPE          "local"
 #define PROJECT_BRANCH_CODE         "U"
 #define PROJECT_BUILD_SUFFIX        "x"
-#define PROJECT_BUILD_DATE          "2025-09-29"
+#define PROJECT_BUILD_DATE "2025-10-21"
 #define PROJECT_BUILD_TIME          __TIME__
 #define PROJECT_BUILD_TIMESTAMP     __DATE__ " " __TIME__
 
 // Git Commit Information - ✅ Обновляется автоматически
-#define PROJECT_COMMIT_HASH         "0000000000000000000000000000000000000000"
-#define PROJECT_COMMIT_SHORT_HASH   "0000000"
-#define PROJECT_COMMIT_AUTHOR       "Developer"
-#define PROJECT_COMMIT_DATE         "2025-09-29"
+#define PROJECT_COMMIT_HASH "19f778183fea6ecb1fba08b70f79e3fc893f05d5"
+#define PROJECT_COMMIT_SHORT_HASH "19f7781"
+#define PROJECT_COMMIT_AUTHOR "MirGame"
+#define PROJECT_COMMIT_DATE "2025-10-21"
 
 /* ========================================================================== */
 /*                            COMPATIBILITY MACROS                            */
