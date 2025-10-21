@@ -1,0 +1,74 @@
+name: "🏗️ Build System Issue"
+description: "Report problems with CI/CD, compilation, or versioning"
+title: "🏗️ [Build]: "
+labels: ["type-build", "priority-medium", "component-ci-cd"]
+body:
+  - type: markdown
+    attributes:
+      value: "## 🏗️ Build System Issue\nReport problems with the build system, CI/CD, or versioning."
+  
+  - type: input
+    id: workflow
+    attributes:
+      label: "⚙️ Workflow"
+      description: "Which workflow is failing?"
+      placeholder: "build.yml / auto-label.yml / sync-labels.yml"
+    validations:
+      required: true
+  
+  - type: input
+    id: branch
+    attributes:
+      label: "🌿 Branch"
+      description: "Which branch were you working on?"
+      placeholder: "e.g., dev, main, feature/x"
+    validations:
+      required: true
+  
+  - type: input
+    id: run-id
+    attributes:
+      label: "🆔 Run ID"
+      description: "GitHub Actions run ID (if available)"
+      placeholder: "e.g., #123"
+    validations:
+      required: false
+  
+  - type: textarea
+    id: error-details
+    attributes:
+      label: "📋 Error Details"
+      description: "Paste relevant workflow section or error"
+      render: yaml
+    validations:
+      required: true
+  
+  - type: textarea
+    id: steps
+    attributes:
+      label: "🔧 Steps to Reproduce"
+      description: "How can we reproduce this build issue?"
+      placeholder: |
+        - Push to branch: dev
+        - Action fails at: [specific step]
+        - Error: [description]
+    validations:
+      required: true
+  
+  - type: textarea
+    id: expected
+    attributes:
+      label: "📊 Expected Behavior"
+      description: "What should have happened?"
+      placeholder: "Successful workflow execution"
+    validations:
+      required: true
+  
+  - type: textarea
+    id: version-info
+    attributes:
+      label: "🏷️ Version Information"
+      description: "Run: python3 update_version.py info"
+      render: shell
+    validations:
+      required: false

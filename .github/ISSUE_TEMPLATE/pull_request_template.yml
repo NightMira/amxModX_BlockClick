@@ -1,0 +1,119 @@
+name: "📋 Pull Request"
+description: "Template for all pull requests"
+title: "📋 [PR]: "
+labels: ["pull-request"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## 📋 Pull Request
+        Thank you for your contribution! Please fill out this form for review.
+
+  - type: textarea
+    id: changes-description
+    attributes:
+      label: "📝 Changes Description"
+      description: "Describe what changes you've made in this PR"
+      placeholder: "Added new function for event processing..."
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: change-types
+    attributes:
+      label: "🔧 Type of Changes"
+      description: "Select the types of changes in this PR"
+      options:
+        - label: "🐛 Bug fix"
+        - label: "✨ New feature"
+        - label: "♻️ Refactoring"
+        - label: "📚 Documentation"
+        - label: "🏗️ Build system"
+        - label: "🧪 Tests"
+
+  - type: textarea
+    id: related-issues
+    attributes:
+      label: "🎯 Related Issues"
+      description: "Reference related issues (comma separated)"
+      placeholder: "Fixes #123, Closes #456, Related to #789"
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: "✅ Checklist"
+      description: "Please check off completed items"
+      options:
+        - label: "Code follows project standards"
+        - label: "Tests passed successfully"
+        - label: "Documentation updated (if applicable)"
+        - label: "Version updated (if needed)"
+        - label: "Changes are backward compatible"
+        - label: "CI/CD pipelines successful"
+
+  - type: input
+    id: source-branch
+    attributes:
+      label: "🌿 Source Branch"
+      description: "Which branch is this PR from?"
+      placeholder: "feature/new-feature"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: target-branch
+    attributes:
+      label: "🎯 Target Branch"
+      description: "Which branch are you merging into?"
+      options:
+        - "dev"
+        - "main"
+        - "staging"
+        - "release/*"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: version-impact
+    attributes:
+      label: "📦 Version Impact"
+      description: "How do these changes affect the project version?"
+      options:
+        - "patch (bug fix)"
+        - "minor (new feature)"
+        - "major (breaking changes)"
+        - "none (no version change)"
+    validations:
+      required: true
+
+  - type: textarea
+    id: testing-info
+    attributes:
+      label: "🧪 Testing Information"
+      description: "Describe how you tested the changes"
+      placeholder: |
+        - Tested on Windows/Linux
+        - Verified compatibility with version X
+        - Ran integration tests
+    validations:
+      required: false
+
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: "🖼️ Screenshots (if applicable)"
+      description: "Add screenshots for visual changes"
+      placeholder: "![Description](image-url)"
+    validations:
+      required: false
+
+  - type: markdown
+    attributes:
+      value: |
+        ## 📊 CI/CD Status
+        *This section will be automatically populated after workflows run*
+
+        ---
+        *Thank you for contributing to the project! 🚀*

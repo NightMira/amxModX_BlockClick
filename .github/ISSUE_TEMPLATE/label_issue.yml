@@ -1,0 +1,66 @@
+name: "🏷️ Label System Issue"
+description: "Report problems with automatic labeling or suggest new labels"
+title: "🏷️ [Labels]: "
+labels: ["type-bug", "priority-low", "component-ci-cd"]
+body:
+  - type: markdown
+    attributes:
+      value: "## 🏷️ Label System Issue\nReport problems with automatic labeling or suggest new labels."
+  
+  - type: input
+    id: issue-pr
+    attributes:
+      label: "🔗 Issue/PR"
+      description: "Which issue or PR has labeling problems?"
+      placeholder: "#123"
+    validations:
+      required: false
+  
+  - type: input
+    id: expected-labels
+    attributes:
+      label: "✅ Expected Labels"
+      description: "What labels should have been applied?"
+      placeholder: "e.g., type-bug, priority-high"
+    validations:
+      required: false
+  
+  - type: input
+    id: actual-labels
+    attributes:
+      label: "❌ Actual Labels"
+      description: "What labels were actually applied?"
+      placeholder: "e.g., type-feature"
+    validations:
+      required: false
+  
+  - type: textarea
+    id: context
+    attributes:
+      label: "📋 Context"
+      description: "Describe what should have been labeled differently"
+    validations:
+      required: true
+  
+  - type: textarea
+    id: label-suggestions
+    attributes:
+      label: "💡 Label Suggestions"
+      description: "Suggest new labels for the system"
+      placeholder: |
+        **New Labels:**
+        - [label-name]: "description"
+        - [label-name]: "description"
+    validations:
+      required: false
+  
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: "🔧 Reproduction"
+      description: "How can we reproduce the labeling issue?"
+      placeholder: |
+        1. Create issue with: [specific content]
+        2. Auto-labeling assigns: [wrong labels]
+    validations:
+      required: false

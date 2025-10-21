@@ -1,0 +1,22 @@
+# Build artifacts
+compiled/
+compile.log
+
+# Build system files
+.build_history.json
+*.build_history.json
+
+# Compiler and temporary files
+amxxpc
+amxxpc32.so
+amxmodx19.tar
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo

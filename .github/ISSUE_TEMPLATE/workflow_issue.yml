@@ -1,0 +1,88 @@
+name: "🔄 Workflow Issue"
+description: "Report problems with GitHub Actions workflows"
+title: "🔄 [Workflow]: "
+labels: ["type-build", "priority-high", "component-ci-cd"]
+body:
+  - type: markdown
+    attributes:
+      value: "## 🔄 Workflow Issue\nReport problems with GitHub Actions workflows."
+  
+  - type: input
+    id: workflow
+    attributes:
+      label: "⚙️ Workflow"
+      description: "Which workflow is failing?"
+      placeholder: "build.yml / auto-label.yml / sync-labels.yml"
+    validations:
+      required: true
+  
+  - type: input
+    id: branch
+    attributes:
+      label: "🌿 Branch"
+      description: "Which branch triggered the workflow?"
+      placeholder: "e.g., dev, main"
+    validations:
+      required: true
+  
+  - type: input
+    id: run-id
+    attributes:
+      label: "🆔 Run ID"
+      description: "GitHub Actions run ID"
+      placeholder: "e.g., #123"
+    validations:
+      required: false
+  
+  - type: dropdown
+    id: event
+    attributes:
+      label: "🎯 Trigger Event"
+      description: "What triggered the workflow?"
+      options:
+        - "push"
+        - "pull_request"
+        - "workflow_dispatch"
+        - "schedule"
+        - "Other"
+    validations:
+      required: true
+  
+  - type: textarea
+    id: error-details
+    attributes:
+      label: "📋 Error Details"
+      description: "Paste workflow error output"
+      render: yaml
+    validations:
+      required: true
+  
+  - type: textarea
+    id: steps
+    attributes:
+      label: "🔧 Reproduction Steps"
+      description: "How can we reproduce this workflow failure?"
+      placeholder: |
+        1. Event: [push / pull_request / workflow_dispatch]
+        2. Branch: [e.g., dev]
+        3. Error occurs at: [step name]
+    validations:
+      required: true
+  
+  - type: textarea
+    id: expected
+    attributes:
+      label: "📊 Expected Behavior"
+      description: "What should have happened?"
+      placeholder: "Workflow completes successfully"
+    validations:
+      required: true
+  
+  - type: textarea
+    id: version-info
+    attributes:
+      label: "🏷️ Version Information"
+      description: "Run: python3 update_version.py info"
+      render: shell
+    validations:
+      required: false

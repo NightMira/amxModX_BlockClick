@@ -1,0 +1,54 @@
+name: "📚 Documentation Issue"
+description: "Report problems or suggest improvements for documentation"
+title: "📚 [Docs]: "
+labels: ["type-docs", "priority-low", "component-docs"]
+body:
+  - type: markdown
+    attributes:
+      value: "## 📚 Documentation Issue\nHelp us improve our documentation!"
+  
+  - type: input
+    id: file
+    attributes:
+      label: "📄 File"
+      description: "Which documentation file has the issue?"
+      placeholder: "e.g., README.md, config.sh, compile.sh"
+    validations:
+      required: true
+  
+  - type: input
+    id: section
+    attributes:
+      label: "📑 Section"
+      description: "Which section of the document?"
+      placeholder: "e.g., Installation, Usage"
+    validations:
+      required: false
+  
+  - type: textarea
+    id: description
+    attributes:
+      label: "📝 Issue Description"
+      description: "Describe what's wrong or missing"
+    validations:
+      required: true
+  
+  - type: textarea
+    id: improvement
+    attributes:
+      label: "💡 Suggested Improvement"
+      description: "How would you improve it?"
+    validations:
+      required: false
+  
+  - type: checkboxes
+    id: related-files
+    attributes:
+      label: "🔗 Related Files"
+      description: "Which files are affected?"
+      options:
+        - label: "README.md"
+        - label: "config.sh"
+        - label: "compile.sh"
+        - label: "update_version.py"
+        - label: "version.inc"

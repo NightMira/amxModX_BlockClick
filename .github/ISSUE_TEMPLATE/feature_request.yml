@@ -1,0 +1,68 @@
+name: "✨ Feature Request"
+description: "Suggest a new feature for plugins or build system"
+title: "✨ [Feature]: "
+labels: ["type-feature", "priority-medium", "component-plugins"]
+body:
+  - type: markdown
+    attributes:
+      value: "## ✨ Feature Request\nSuggest a new feature or improvement for our system."
+  
+  - type: input
+    id: component
+    attributes:
+      label: "🔧 Component"
+      description: "Which component would this feature affect?"
+      placeholder: "plugins / compiler / CI-CD / versioning / docs"
+    validations:
+      required: true
+  
+  - type: dropdown
+    id: impact
+    attributes:
+      label: "📊 Impact Level"
+      description: "How significant is this feature?"
+      options:
+        - "high"
+        - "medium"
+        - "low"
+    validations:
+      required: true
+  
+  - type: textarea
+    id: description
+    attributes:
+      label: "🎯 Feature Description"
+      description: "Describe the feature you'd like to see"
+    validations:
+      required: true
+  
+  - type: textarea
+    id: solution
+    attributes:
+      label: "💡 Proposed Solution"
+      description: "How should this feature work?"
+      placeholder: |
+        // Code example if applicable
+        Or describe the workflow improvement.
+      render: amx
+    validations:
+      required: false
+  
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: "🔄 Alternative Solutions"
+      description: "What other approaches have you considered?"
+    validations:
+      required: false
+  
+  - type: textarea
+    id: context
+    attributes:
+      label: "📋 Additional Context"
+      description: "Any other relevant information"
+      placeholder: |
+        Related Issues: #123, #456
+        Version: [e.g., 0.0.5-SNAPSHOT.a1b2c3d]
+    validations:
+      required: false

@@ -1,0 +1,67 @@
+name: "🧪 Test Issue"
+description: "Report problems with testing or suggest test improvements"
+title: "🧪 [Test]: "
+labels: ["type-test", "priority-medium"]
+body:
+  - type: markdown
+    attributes:
+      value: "## 🧪 Test Issue\nReport problems with testing or suggest improvements."
+  
+  - type: dropdown
+    id: test-type
+    attributes:
+      label: "🧪 Test Type"
+      description: "What type of test is failing?"
+      options:
+        - "unit"
+        - "integration"
+        - "workflow"
+    validations:
+      required: true
+  
+  - type: input
+    id: component
+    attributes:
+      label: "🔧 Component"
+      description: "Which component is being tested?"
+      placeholder: "plugins / compiler / CI-CD"
+    validations:
+      required: true
+  
+  - type: textarea
+    id: description
+    attributes:
+      label: "🐛 Issue Description"
+      description: "Describe the test failure or gap"
+    validations:
+      required: true
+  
+  - type: textarea
+    id: steps
+    attributes:
+      label: "📋 Steps to Reproduce"
+      description: "How can we reproduce the test issue?"
+      placeholder: |
+        1. Run: [test command]
+        2. Observe: [behavior]
+    validations:
+      required: true
+  
+  - type: textarea
+    id: expected
+    attributes:
+      label: "✅ Expected Result"
+      description: "What should happen when the test passes?"
+    validations:
+      required: true
+  
+  - type: textarea
+    id: environment
+    attributes:
+      label: "🔧 Environment"
+      description: "Test environment information"
+      placeholder: |
+        OS: [e.g., Ubuntu, Windows]
+        Python: [e.g., 3.9]
+    validations:
+      required: false

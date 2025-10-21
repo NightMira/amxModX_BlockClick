@@ -1,0 +1,43 @@
+name: Sync Labels
+
+on:
+  push:
+    branches: [main, dev]
+    paths: ['.github/labels.yml']
+  workflow_dispatch:
+
+jobs:
+  sync-labels:
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+    steps:
+      - name: 🚀 Checkout code
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.PRIVATE_REPO_TOKEN }}
+
+      - name: 🏷️ Sync GitHub Labels
+        uses: micnncim/action-label-syncer@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.PRIVATE_REPO_TOKEN }}
+        with:
+          manifest: .github/labels.yml
+          prune: true
+
+      - name: 📊 Create summary
+        run: |
+          echo "## 🏷️ Labels Synchronization Complete" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### 📋 Status" >> $GITHUB_STEP_SUMMARY
+          echo "✅ Labels successfully synchronized from `.github/labels.yml`" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### 📝 Manifest Used" >> $GITHUB_STEP_SUMMARY
+          echo "Labels were synchronized using the following manifest:" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo '```yaml' >> $GITHUB_STEP_SUMMARY
+          cat .github/labels.yml >> $GITHUB_STEP_SUMMARY
+          echo '```' >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### ⏰ Timestamp" >> $GITHUB_STEP_SUMMARY
+          echo "$(date '+%Y-%m-%d %H:%M:%S')" >> $GITHUB_STEP_SUMMARY
